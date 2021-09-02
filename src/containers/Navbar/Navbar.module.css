@@ -1,0 +1,15 @@
+.Navbar {
+  height: 70px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+@media (max-width: 400px) {
+  .Navbar {
+    height: 60px;
+  }
+}

@@ -1,0 +1,9 @@
+.GameBoard {
+  margin-top: 70px;
+}
+
+@media (max-width: 400px) {
+  .GameBoard {
+    margin-top: 60px;
+  }
+}

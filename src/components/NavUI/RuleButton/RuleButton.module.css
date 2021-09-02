@@ -1,0 +1,21 @@
+.RuleButton {
+  color: #8e3b97;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+  margin-right: 10%;
+  padding: 10px 20px;
+  font-size: 17px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.RuleButton:hover {
+  color: #24228f;
+  background-color: aliceblue;
+}
+@media (max-width: 600px) {
+  .RuleButton {
+    margin-right: 4%;
+  }
+}

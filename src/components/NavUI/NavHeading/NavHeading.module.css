@@ -1,0 +1,36 @@
+.NavHeading {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #3f3c3c;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -1px;
+}
+
+.NavHeading > span:nth-child(1) {
+  color: #db3a6c;
+}
+.NavHeading > span:nth-child(2) {
+  color: #46c6ef;
+}
+.NavHeading > span:nth-child(3) {
+  color: #e4b445;
+}
+.NavHeading > span:nth-child(4) {
+  color: #e35b45;
+}
+
+@media (max-width: 600px) {
+  .NavHeading {
+    margin-left: 4%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .NavHeading {
+    font-size: 1.6rem;
+  }
+}
