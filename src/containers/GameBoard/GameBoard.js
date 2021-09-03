@@ -4,6 +4,7 @@ import classes from "./GameBoard.module.css";
 import InputColor from "../../components/UI/InputColor/InputColor";
 import RestartButton from "../../components/UI/RestartButton/RestartButton";
 import GuessSection from "../GuessSection/GuessSection";
+import CheckButton from "../../components/UI/CheckButton/CheckButton";
 
 class GameBoard extends Component {
   state = {
@@ -17,6 +18,15 @@ class GameBoard extends Component {
     ],
     selectedColor: 0,
     computerGuess: [],
+    selectedGuess: 0,
+    guessColors: [-1, -1, -1, -1],
+    result: {},
+  };
+
+  inputColorHandler = (id) => {
+    let updGuessColors = [...this.state.guessColors];
+    updGuessColors[id] = this.state.selectedColor;
+    this.setState({ guessColors: updGuessColors });
   };
 
   selectColorHandler = (id) => {
@@ -48,9 +58,13 @@ class GameBoard extends Component {
             selectColorHandler={this.selectColorHandler}
           />
           <RestartButton restartButtonHandler={this.restartButtonHandler} />
+          <CheckButton />
         </div>
         <div className={classes.Content}>
           <GuessSection
+            guessColors={this.state.guessColors}
+            selectedGuess={this.state.selectedGuess}
+            inputColorHandler={this.inputColorHandler}
             inputColor={this.state.inputColor}
             selectedColor={this.state.selectedColor}
             computerGuess={this.state.computerGuess}

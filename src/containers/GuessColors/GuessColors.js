@@ -1,24 +1,8 @@
 import React, { Component } from "react";
 
-import classes from "./GuessColors.module.css";
 import ColorCircle from "../../components/UI/ColorCircle/ColorCircle";
-import GuessResult from "../../components/UI/GuessResult/GuessResult";
-import CheckButton from "../../components/UI/CheckButton/CheckButton";
 
 class guessColors extends Component {
-  state = {
-    showCheck: false,
-  };
-
-  componentDidUpdate() {
-    if (
-      this.props.guessColors.every((a) => a > -1) &&
-      this.state.showCheck === false
-    ) {
-      this.setState({ showCheck: true });
-    }
-  }
-
   shouldComponentUpdate(nextProps) {
     if (nextProps.selectedGuess === nextProps.id) {
       return true;
@@ -40,19 +24,7 @@ class guessColors extends Component {
       );
     }
 
-    return (
-      <div className={classes.GuessColors}>
-        <div className={classes.ID}>{this.props.id}</div>
-        {colors}
-        <div className={classes.Check}>
-          {this.state.showCheck ? (
-            <CheckButton checkGuessHandler={this.props.checkGuessHandler} />
-          ) : (
-            <GuessResult />
-          )}
-        </div>
-      </div>
-    );
+    return colors;
   }
 }
 

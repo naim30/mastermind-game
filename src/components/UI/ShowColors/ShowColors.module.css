@@ -1,0 +1,29 @@
+.ShowColors {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.ID {
+  padding: 10px 20px 10px 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: #e4e4e4;
+}
+
+.Check {
+  padding: 10px 10px 10px 20px;
+}
+
+@media (max-width: 500px) {
+  .ShowColors {
+    padding: 5px;
+  }
+
+  .ID {
+    display: none;
+  }
+
+  .Check {
+    padding: 5px 5px 5px 10px;
+  }
+}

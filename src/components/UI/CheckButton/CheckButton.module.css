@@ -1,13 +1,14 @@
 .CheckButton {
   position: relative;
-  background-color: rgb(146, 146, 146);
-  height: 30px;
-  width: 30px;
-  border-radius: 3px;
+  background-color: white;
+  margin: 0px 10px;
+  border-radius: 100%;
+  height: 45px;
+  width: 45px;
 }
 
 .CheckButton:hover {
-  background-color: rgb(87, 87, 87);
+  background-color: rgb(212, 212, 212);
 }
 
 .CheckButton::after {
@@ -23,17 +24,19 @@
   font-family: "Material Icons";
   font-weight: 700;
   font-size: 21px;
-  color: #ffffff;
+  color: #272626;
   border-radius: 100%;
+}
+
+.Disable {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 @media (max-width: 500px) {
   .CheckButton {
-    height: 24px;
-    width: 24px;
-  }
-
-  .CheckButton::after {
-    font-size: 16px;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
   }
 }
