@@ -3,7 +3,6 @@
   background-color: rgb(146, 146, 146);
   height: 30px;
   width: 30px;
-  margin: 0px 10px;
   border-radius: 3px;
 }
 
@@ -24,6 +23,17 @@
   font-family: "Material Icons";
   font-weight: 700;
   font-size: 21px;
-  color: #e0e0e0;
+  color: #ffffff;
   border-radius: 100%;
+}
+
+@media (max-width: 500px) {
+  .CheckButton {
+    height: 24px;
+    width: 24px;
+  }
+
+  .CheckButton::after {
+    font-size: 16px;
+  }
 }

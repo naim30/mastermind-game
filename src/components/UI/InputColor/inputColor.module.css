@@ -6,3 +6,10 @@
   background-color: white;
   border-radius: 20px 0px;
 }
+
+@media (max-width: 500px) {
+  .InputColor {
+    padding: 7px 3px;
+    border-radius: 10px 0px;
+  }
+}

@@ -15,5 +15,10 @@
 @media (max-width: 400px) {
   .GameBoard {
     margin-top: 60px;
+    padding: 20px 5px;
+    justify-content: space-between;
+  }
+  .Menu {
+    padding-right: 0px;
   }
 }

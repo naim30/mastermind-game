@@ -5,8 +5,26 @@
 }
 
 .ID {
-  padding-right: 10px;
+  padding: 10px 20px 10px 10px;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: #e4e4e4;
+}
+
+.Check {
+  padding: 10px 10px 10px 20px;
+}
+
+@media (max-width: 500px) {
+  .GuessColors {
+    padding: 5px;
+  }
+
+  .ID {
+    padding: 5px 10px 5px 5px;
+  }
+
+  .Check {
+    padding: 5px 5px 5px 10px;
+  }
 }

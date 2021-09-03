@@ -20,3 +20,32 @@
   background-color: rgba(92, 92, 92, 0.247);
   text-shadow: 0px 0px 5px rgba(197, 197, 197, 0.466);
 }
+
+.Input {
+  border-radius: 100%;
+  height: 42px;
+  width: 42px;
+  margin: 3px;
+}
+
+.Guess {
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+
+@media (max-width: 500px) {
+  .Input {
+    height: 37px;
+    width: 37px;
+    margin: 3px;
+  }
+
+  .Guess {
+    border-radius: 100%;
+    height: 35px;
+    width: 35px;
+    margin: 5px;
+  }
+}

@@ -34,8 +34,6 @@ class guessColors extends Component {
         <ColorCircle
           key={i}
           id={i}
-          size={35}
-          margin={5}
           color={this.props.inputColor[this.props.guessColors[i]]}
           clicked={this.props.inputColorHandler}
         />

@@ -4,22 +4,17 @@ const colorCircle = (props) => {
   let styles = props.color
     ? {
         backgroundColor: props.color,
-        height: props.size + "px",
-        width: props.size + "px",
-        borderRadius: props.size + "px",
-        margin: props.margin + "px",
       }
     : {
         backgroundColor: "#ebeef6",
-        height: props.size + "px",
-        width: props.size + "px",
-        borderRadius: props.size + "px",
-        margin: props.margin + "px",
       };
   return (
     <div
       style={styles}
-      className={props.selected ? classes.Selected : ""}
+      className={[
+        props.selected ? classes.Selected : "",
+        props.type === "input" ? classes.Input : classes.Guess,
+      ].join(" ")}
       onClick={() => props.clicked(props.id)}
     ></div>
   );

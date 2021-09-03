@@ -9,10 +9,9 @@ const inputColor = (props) => {
           key={i}
           id={i}
           color={color}
-          size={props.circleSize}
-          margin={3}
           selected={props.selectedColor === i ? true : false}
           clicked={props.selectColorHandler}
+          type={"input"}
         />
       ))}
     </div>

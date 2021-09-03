@@ -43,7 +43,6 @@ class GameBoard extends Component {
       <div className={classes.GameBoard}>
         <div className={classes.Menu}>
           <InputColor
-            circleSize={42}
             colors={this.state.inputColor}
             selectedColor={this.state.selectedColor}
             selectColorHandler={this.selectColorHandler}
@@ -55,6 +54,7 @@ class GameBoard extends Component {
             inputColor={this.state.inputColor}
             selectedColor={this.state.selectedColor}
             computerGuess={this.state.computerGuess}
+            size={this.state.innerWidth > 500 ? 40 : 35}
           />
         </div>
       </div>

@@ -3,3 +3,10 @@
   background-color: white;
   border-radius: 0px 20px;
 }
+
+@media (max-width: 500px) {
+  .GuessSection {
+    padding: 10px;
+    border-radius: 0px 10px;
+  }
+}
