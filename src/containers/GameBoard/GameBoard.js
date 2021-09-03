@@ -21,6 +21,21 @@ class GameBoard extends Component {
     selectedGuess: 0,
     guessColors: [-1, -1, -1, -1],
     result: {},
+    showCheck: false,
+    winner: null,
+  };
+
+  shuffleArray = (array) => {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  };
+
+  scrollToBottom = () => {
+    this.elem.scrollIntoView({ behavior: "smooth" });
   };
 
   inputColorHandler = (id) => {
@@ -37,6 +52,44 @@ class GameBoard extends Component {
     window.location.reload();
   };
 
+  checkGuessHandler = () => {
+    let updResult = { ...this.state.result };
+    updResult[this.state.selectedGuess] = this.state.guessColors.map((a, i) => {
+      if (a === this.state.computerGuess[i]) {
+        return 2;
+      } else if (this.state.computerGuess.indexOf(a) !== -1) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    if (updResult[this.state.selectedGuess].every((a) => a > 1)) {
+      this.setState({ winner: true });
+      this.scrollToBottom();
+    } else if (this.selectedGuess === 9) {
+      this.setState({ winner: false });
+      this.scrollToBottom();
+    } else {
+      this.setState((prevState) => {
+        return {
+          selectedGuess: prevState.selectedGuess + 1,
+          guessColors: [-1, -1, -1, -1],
+        };
+      });
+    }
+    this.shuffleArray(updResult[this.state.selectedGuess]);
+    this.setState({ result: updResult });
+  };
+
+  componentDidUpdate() {
+    if (
+      this.state.guessColors.every((a) => a > -1) &&
+      this.state.showCheck === false
+    ) {
+      this.setState({ showCheck: true });
+    }
+  }
+
   componentDidMount() {
     if (this.state.computerGuess.length === 0) {
       let colors = [];
@@ -44,6 +97,7 @@ class GameBoard extends Component {
         let rndind = Math.floor(6 * Math.random());
         colors.push(rndind);
       }
+      console.log(colors);
       this.setState({ computerGuess: colors });
     }
   }
@@ -58,7 +112,10 @@ class GameBoard extends Component {
             selectColorHandler={this.selectColorHandler}
           />
           <RestartButton restartButtonHandler={this.restartButtonHandler} />
-          <CheckButton />
+          <CheckButton
+            showCheck={this.state.showCheck}
+            checkGuessHandler={this.checkGuessHandler}
+          />
         </div>
         <div className={classes.Content}>
           <GuessSection
@@ -69,7 +126,9 @@ class GameBoard extends Component {
             selectedColor={this.state.selectedColor}
             computerGuess={this.state.computerGuess}
             size={this.state.innerWidth > 500 ? 40 : 35}
+            result={this.state.result}
           />
+          <div className="Result" ref={(elem) => (this.elem = elem)}></div>
         </div>
       </div>
     );

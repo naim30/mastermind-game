@@ -15,6 +15,7 @@ class GuessSection extends Component {
           selectedGuess={this.props.selectedGuess}
           inputColor={this.props.inputColor}
           inputColorHandler={this.props.inputColorHandler}
+          resultArr={this.props.result[i]}
         />
       );
     }
