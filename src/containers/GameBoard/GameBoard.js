@@ -41,7 +41,7 @@ class GameBoard extends Component {
           <RestartButton restartButtonHandler={this.restartButtonHandler} />
         </div>
         <div className={classes.Content}>
-          <GuessSection />
+          <GuessSection inputColor={this.state.inputColor} />
         </div>
       </div>
     );

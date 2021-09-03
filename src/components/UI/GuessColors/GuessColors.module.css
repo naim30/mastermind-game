@@ -1,0 +1,12 @@
+.GuessColors {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.ID {
+  padding-right: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: #e4e4e4;
+}
