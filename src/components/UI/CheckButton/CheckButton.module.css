@@ -1,0 +1,29 @@
+.CheckButton {
+  position: relative;
+  background-color: rgb(146, 146, 146);
+  height: 30px;
+  width: 30px;
+  margin: 0px 10px;
+  border-radius: 3px;
+}
+
+.CheckButton:hover {
+  background-color: rgb(87, 87, 87);
+}
+
+.CheckButton::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\e876";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Material Icons";
+  font-weight: 700;
+  font-size: 21px;
+  color: #e0e0e0;
+  border-radius: 100%;
+}

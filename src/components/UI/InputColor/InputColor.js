@@ -4,15 +4,15 @@ import ColorCircle from "../ColorCircle/ColorCircle";
 const inputColor = (props) => {
   return (
     <div className={classes.InputColor}>
-      {props.colors.map((color) => (
+      {props.colors.map((color, i) => (
         <ColorCircle
-          key={color.id}
-          id={color.id}
-          color={color.color}
+          key={i}
+          id={i}
+          color={color}
           size={props.circleSize}
           margin={3}
-          selected={props.selectedCOlor === color.color ? true : false}
-          inputColorHandler={props.inputColorHandler}
+          selected={props.selectedColor === i ? true : false}
+          clicked={props.selectColorHandler}
         />
       ))}
     </div>

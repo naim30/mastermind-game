@@ -20,7 +20,7 @@ const colorCircle = (props) => {
     <div
       style={styles}
       className={props.selected ? classes.Selected : ""}
-      onClick={() => props.inputColorHandler(props.id)}
+      onClick={() => props.clicked(props.id)}
     ></div>
   );
 };

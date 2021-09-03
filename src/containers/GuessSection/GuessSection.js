@@ -1,23 +1,53 @@
 import React, { Component } from "react";
 
 import classes from "./GuessSection.module.css";
-import GuessColor from "../../components/UI/GuessColors/GuessColors";
+import GuessColor from "../GuessColors/GuessColors";
 
 class GuessSection extends Component {
   state = {
-    guessIds: ["g0", "g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9"],
-    selectedGuess: "g0",
-    guessColors: [],
+    selectedGuess: 0,
+    guessColors: [-1, -1, -1, -1],
+    result: [],
+  };
+
+  inputColorHandler = (id) => {
+    let updGuessColors = [...this.state.guessColors];
+    updGuessColors[id] = this.props.selectedColor;
+    this.setState({ guessColors: updGuessColors });
+  };
+
+  checkGuessHandler = () => {
+    let result = this.state.guessColors.map((a, i) => {
+      if (a === this.props.computerGuess[i]) {
+        return 2;
+      } else if (this.props.computerGuess.indexOf(a) > -1) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    console.log(this.state.guessColors, this.props.computerGuess);
+    console.log(result);
+    this.setState({ result: result });
   };
 
   render() {
-    return (
-      <div className={classes.GuessSection}>
-        {this.state.guessIds.map((id) => (
-          <GuessColor key={id} id={id} guessColors={this.state.guessColors} />
-        ))}
-      </div>
-    );
+    let guesses = [];
+    for (let i = 0; i < 10; i++) {
+      guesses.push(
+        <GuessColor
+          key={i}
+          id={i}
+          guessColors={this.state.guessColors}
+          selectedGuess={this.state.selectedGuess}
+          inputColor={this.props.inputColor}
+          inputColorHandler={this.inputColorHandler}
+          checkGuessHandler={this.checkGuessHandler}
+        />
+      );
+    }
+
+    return <div className={classes.GuessSection}>{guesses}</div>;
   }
 }
 

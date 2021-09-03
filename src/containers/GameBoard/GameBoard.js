@@ -8,25 +8,35 @@ import GuessSection from "../GuessSection/GuessSection";
 class GameBoard extends Component {
   state = {
     inputColor: [
-      { id: "c0", color: "#db3a6c" },
-      { id: "c1", color: "#46c6ef" },
-      { id: "c2", color: "#49da9a" },
-      { id: "c3", color: "#f7d038" },
-      { id: "c4", color: "#8e3b97" },
-      { id: "c5", color: "#eb7532" },
+      "#db3a6c",
+      "#46c6ef",
+      "#49da9a",
+      "#f7d038",
+      "#8e3b97",
+      "#eb7532",
     ],
-    selectedCOlor: "#db3a6c",
+    selectedColor: 0,
+    computerGuess: [],
   };
 
-  inputColorHandler = (id) => {
-    let color = this.state.inputColor.find((col) => col.id === id);
-    console.log(color);
-    this.setState({ selectedCOlor: color.color });
+  selectColorHandler = (id) => {
+    this.setState({ selectedColor: id });
   };
 
   restartButtonHandler = () => {
     window.location.reload();
   };
+
+  componentDidMount() {
+    if (this.state.computerGuess.length === 0) {
+      let colors = [];
+      for (let i = 0; i < 4; i++) {
+        let rndind = Math.floor(6 * Math.random());
+        colors.push(rndind);
+      }
+      this.setState({ computerGuess: colors });
+    }
+  }
 
   render() {
     return (
@@ -35,13 +45,17 @@ class GameBoard extends Component {
           <InputColor
             circleSize={42}
             colors={this.state.inputColor}
-            selectedCOlor={this.state.selectedCOlor}
-            inputColorHandler={this.inputColorHandler}
+            selectedColor={this.state.selectedColor}
+            selectColorHandler={this.selectColorHandler}
           />
           <RestartButton restartButtonHandler={this.restartButtonHandler} />
         </div>
         <div className={classes.Content}>
-          <GuessSection inputColor={this.state.inputColor} />
+          <GuessSection
+            inputColor={this.state.inputColor}
+            selectedColor={this.state.selectedColor}
+            computerGuess={this.state.computerGuess}
+          />
         </div>
       </div>
     );
