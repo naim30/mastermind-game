@@ -2,6 +2,12 @@
   margin-top: 70px;
 }
 
+.Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (max-width: 400px) {
   .GameBoard {
     margin-top: 60px;
