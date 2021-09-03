@@ -49,3 +49,9 @@
     margin: 5px;
   }
 }
+
+@media (max-width: 350px) {
+  .Guess {
+    margin: 3px;
+  }
+}
