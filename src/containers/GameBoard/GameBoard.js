@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import classes from "./GameBoard.module.css";
 import InputColor from "../../components/UI/InputColor/InputColor";
 import RestartButton from "../../components/UI/RestartButton/RestartButton";
+import GuessSection from "../GuessSection/GuessSection";
 
 class GameBoard extends Component {
   state = {
@@ -38,6 +39,9 @@ class GameBoard extends Component {
             inputColorHandler={this.inputColorHandler}
           />
           <RestartButton restartButtonHandler={this.restartButtonHandler} />
+        </div>
+        <div className={classes.Content}>
+          <GuessSection />
         </div>
       </div>
     );
