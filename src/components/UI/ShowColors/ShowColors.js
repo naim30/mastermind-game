@@ -15,7 +15,7 @@ const showColors = (props) => {
         inputColorHandler={props.inputColorHandler}
       />
       <div className={classes.Check}>
-        <GuessResult />
+        <GuessResult resultArr={props.resultArr} />
       </div>
     </div>
   );

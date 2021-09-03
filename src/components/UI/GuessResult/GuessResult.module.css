@@ -7,8 +7,19 @@
 }
 
 .GuessResult > div {
-  border: 2px solid rgb(187, 187, 187);
   border-radius: 100%;
+}
+
+.Undecided {
+  border: 2px solid rgb(187, 187, 187);
+}
+
+.BCorrect {
+  background-color: #3f3c3c;
+}
+
+.CCorrect {
+  background-color: #eb7532;
 }
 
 @media (max-width: 500px) {
