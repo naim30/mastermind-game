@@ -5,6 +5,7 @@ import InputColor from "../../components/UI/InputColor/InputColor";
 import RestartButton from "../../components/UI/RestartButton/RestartButton";
 import GuessSection from "../GuessSection/GuessSection";
 import CheckButton from "../../components/UI/CheckButton/CheckButton";
+import ShowResult from "../../components/UI/ShowResult/ShowResult";
 
 class GameBoard extends Component {
   state = {
@@ -35,7 +36,11 @@ class GameBoard extends Component {
   };
 
   scrollToBottom = () => {
-    this.elem.scrollIntoView({ behavior: "smooth" });
+    this.elem.scrollIntoView({
+      block: "end",
+      inline: "nearest",
+      behavior: "smooth",
+    });
   };
 
   inputColorHandler = (id) => {
@@ -66,7 +71,7 @@ class GameBoard extends Component {
     if (updResult[this.state.selectedGuess].every((a) => a > 1)) {
       this.setState({ winner: true });
       this.scrollToBottom();
-    } else if (this.selectedGuess === 9) {
+    } else if (this.state.selectedGuess === 9) {
       this.setState({ winner: false });
       this.scrollToBottom();
     } else {
@@ -74,6 +79,7 @@ class GameBoard extends Component {
         return {
           selectedGuess: prevState.selectedGuess + 1,
           guessColors: [-1, -1, -1, -1],
+          showCheck: false,
         };
       });
     }
@@ -118,6 +124,12 @@ class GameBoard extends Component {
           />
         </div>
         <div className={classes.Content}>
+          <div ref={(elem) => (this.elem = elem)}>
+            <ShowResult
+              winner={this.state.winner}
+              tryAgain={this.restartButtonHandler}
+            />
+          </div>
           <GuessSection
             guessColors={this.state.guessColors}
             selectedGuess={this.state.selectedGuess}
@@ -128,7 +140,6 @@ class GameBoard extends Component {
             size={this.state.innerWidth > 500 ? 40 : 35}
             result={this.state.result}
           />
-          <div className="Result" ref={(elem) => (this.elem = elem)}></div>
         </div>
       </div>
     );

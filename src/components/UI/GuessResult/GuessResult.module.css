@@ -15,10 +15,12 @@
 }
 
 .BCorrect {
+  border: 2px solid #3f3c3c;
   background-color: #3f3c3c;
 }
 
 .CCorrect {
+  border: 2px solid #eb7532;
   background-color: #eb7532;
 }
 
@@ -28,9 +30,5 @@
     height: 22px;
     width: 22px;
     grid-gap: 3px;
-  }
-
-  .GuessResult > div {
-    border: 2px solid rgb(187, 187, 187);
   }
 }

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
+import classes from "./GuessColors.module.css";
 import ColorCircle from "../../components/UI/ColorCircle/ColorCircle";
 
-class guessColors extends Component {
+class GuessColors extends Component {
   shouldComponentUpdate(nextProps) {
     if (nextProps.selectedGuess === nextProps.id) {
       return true;
@@ -24,8 +25,17 @@ class guessColors extends Component {
       );
     }
 
-    return colors;
+    return (
+      <div
+        className={[
+          this.props.selectedGuess === this.props.id ? classes.Selected : "",
+          classes.GuessColors,
+        ].join(" ")}
+      >
+        {colors}
+      </div>
+    );
   }
 }
 
-export default guessColors;
+export default GuessColors;

@@ -1,0 +1,56 @@
+.ShowResult {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.ShowResult > div > span:nth-child(1) {
+  color: #db3a6c;
+}
+.ShowResult > div > span:nth-child(2) {
+  color: #46c6ef;
+}
+.ShowResult > div > span:nth-child(3) {
+  color: #49da9a;
+}
+.ShowResult > div > span:nth-child(4) {
+  color: #f7d038;
+}
+.ShowResult > div > span:nth-child(5) {
+  color: #8e3b97;
+}
+.ShowResult > div > span:nth-child(6) {
+  color: #eb7532;
+}
+.ShowResult > div > span:nth-child(7) {
+  color: #46c6ef;
+}
+.ShowResult > div > span:nth-child(8) {
+  color: #f7d038;
+}
+.ShowResult > div > span:nth-child(9) {
+  color: #49da9a;
+}
+
+.ShowResult > button {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  background-color: #1db5e7;
+  border-radius: 3px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  float: right;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.ShowResult > button:hover {
+  background-color: #0082ad;
+}
