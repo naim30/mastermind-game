@@ -42,13 +42,13 @@ To build this Game I used..
 step 1 : Clone the repo
 
 ```sh
-git clone https://github.com/naim30/svg-editor.git
+git clone https://github.com/naim30/mastermind-game.git
 ```
 
 step 2 : Install libraries
 
 ```sh
-cd svg-editor
+cd mastermind-game
 npm install
 ```
 
