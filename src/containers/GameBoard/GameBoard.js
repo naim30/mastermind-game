@@ -6,6 +6,7 @@ import RestartButton from "../../components/UI/RestartButton/RestartButton";
 import GuessSection from "../GuessSection/GuessSection";
 import CheckButton from "../../components/UI/CheckButton/CheckButton";
 import ShowResult from "../../components/UI/ShowResult/ShowResult";
+import githubIcon from "../../assets/github.svg";
 
 class GameBoard extends Component {
   state = {
@@ -122,6 +123,11 @@ class GameBoard extends Component {
             showCheck={this.state.showCheck}
             checkGuessHandler={this.checkGuessHandler}
           />
+          <a href="https://github.com/naim30">
+            <div className={classes.GithubIcon}>
+              <img src={githubIcon} alt="github-icon" />
+            </div>
+          </a>
         </div>
         <div className={classes.Content}>
           <div ref={(elem) => (this.elem = elem)}>

@@ -12,6 +12,28 @@
   padding-right: 5px;
 }
 
+.Menu > a > .GithubIcon {
+  background-color: rgb(255, 255, 255);
+  height: 45px;
+  width: 45px;
+  margin: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.GithubIcon > img {
+  height: 60%;
+}
+
+@media (max-width: 500px) {
+  .GithubIcon {
+    height: 40px;
+    width: 40px;
+  }
+}
+
 @media (max-width: 400px) {
   .GameBoard {
     margin-top: 60px;
