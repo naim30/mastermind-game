@@ -13,7 +13,7 @@
 }
 
 .Menu > a > .GithubIcon {
-  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(36, 36, 36);
   height: 45px;
   width: 45px;
   margin: 10px;
@@ -28,7 +28,8 @@
 }
 
 @media (max-width: 500px) {
-  .GithubIcon {
+  .Menu > a > .GithubIcon {
+    margin: 5px;
     height: 40px;
     width: 40px;
   }
